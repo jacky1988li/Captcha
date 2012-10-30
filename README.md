@@ -1,4 +1,1 @@
-drunken-ninja
-=============
-
-OOXX
+This is a class of image captcha.
