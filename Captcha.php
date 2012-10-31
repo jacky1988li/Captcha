@@ -16,7 +16,7 @@ class Captcha {
 
 	public $img = NULL;
 
-	public $img_path = './captcha/';	
+	// public $img_path = './captcha/';	
 
 	public $img_url = 'http://www.ci.dev/captcha/';
 
@@ -441,16 +441,15 @@ class Captcha {
 	public function createImgage()
 
 	{
-
-		imagepng($this->img, $this->img_path.$this->img_name);
-
-		$this->image = "<img src=\"$this->img_url$this->img_name\" width=\"$this->img_width\" height=\"$this->img_height\"  alt=\"点击换一张\" class=\"code-pic\" title=\"点击换一张\" />";
+		// imagepng($this->img, $this->img_path.$this->img_name);
+		imagepng($this->img);
+		$this->image = "<img src=\"$this->img_url\" width=\"$this->img_width\" height=\"$this->img_height\"  alt=\"点击换一张\" class=\"code-pic\" title=\"点击换一张\" />";
 
 		imagedestroy($this->img);
 
 		// return array('word' => $this->lowerWord, 'time' => $this->now, 'image' => $this->image, "src"=>$this->img_url.$this->img_name);
 
-		return array('word' => $this->lowerWord, "src"=>$this->img_url.$this->img_name);
+		return array('word' => $this->lowerWord, "src"=>$this->img_url);
 
 	}
 
